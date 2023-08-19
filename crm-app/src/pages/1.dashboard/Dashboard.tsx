@@ -27,7 +27,7 @@ function Copyright(props: any) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        CRM-Web
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -101,7 +101,8 @@ export default function Dashboard() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px', 
+              backgroundColor: '#034040'// keep right padding when drawer closed
             }}
           >
             <IconButton
@@ -126,7 +127,7 @@ export default function Dashboard() {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={3} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -146,9 +147,9 @@ export default function Dashboard() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
+          <List component="nav" >
             {mainListItems}
-            <Divider sx={{ my: 1 }} />
+            <Divider sx={{ my: 1}} />
             {secondaryListItems}
           </List>
         </Drawer>
