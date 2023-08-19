@@ -44,7 +44,6 @@ export default function SignUpSide() {
   };
 
 
-  
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
