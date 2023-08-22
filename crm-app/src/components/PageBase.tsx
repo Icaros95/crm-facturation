@@ -218,7 +218,6 @@ const PageBase: React.FC<PageBaseProps> = ({children}) => {
               pr: '24px', // keep right padding when drawer closed
             }}
           >
-            {/* <LogoImage src={logo} alt="logo" /> */}
             
             <Typography
               component="h1"
@@ -252,18 +251,6 @@ const PageBase: React.FC<PageBaseProps> = ({children}) => {
           >
             <AccountCircleIcon />
           </IconButton>
-          {/* <IconButton
-            size="large"
-            edge="end"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ marginRight:'4px', marginLeft: '4px', ml:0,}}
-        
-          >
-            <MenuIcon />
-          </IconButton> */}
-
-
             <IconButton
               edge="start"
               color="inherit"
@@ -293,40 +280,9 @@ const PageBase: React.FC<PageBaseProps> = ({children}) => {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            {children}
-            {/* <Grid container spacing={3}>
-              {/* Chart */}
-              {/* <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  {/* <Chart /> */}
-                {/* </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              {/* <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}                > */}
-                  {/* <Deposits /> */}
-                {/* </Paper>
-              </Grid>
-              Recent Orders */}
-              {/* <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  {/* <Orders /> */}
-                {/* {/* </Paper>
-              </Grid>
-            </Grid> */}
+            
+                {children}
+            
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
