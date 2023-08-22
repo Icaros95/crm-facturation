@@ -1,37 +1,34 @@
-//import * as React from 'react';
+import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-//import MuiDrawer from '@mui/material/Drawer';
+import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-//import List from '@mui/material/List';
+import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-//import Divider from '@mui/material/Divider';
-//import IconButton from '@mui/material/IconButton';
-//import Badge from '@mui/material/Badge';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
-//import MenuIcon from '@mui/icons-material/Menu';
-//import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-//import NotificationsIcon from '@mui/icons-material/Notifications';
-//import { mainListItems, secondaryListItems } from './listItems';
+import MenuIcon from '@mui/icons-material/Menu';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './chart';
 import Deposits from './deposits';
 import Orders from './orders';
-import Header from '../../components/header';
-import AppDrawer from '../../components/AppDrawer';
-//import PageBase from '../../components/PageBase';
-//import DeleteDialog from '../../components/DeleteDialog';
+
 
 function Copyright(props: any) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        CRM-Web
+        Your Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -63,7 +60,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-{/*const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
       position: 'relative',
@@ -88,23 +85,22 @@ const AppBar = styled(MuiAppBar, {
     },
   }),
 );
-*/}
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
-  {/*const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
-  };*/}
+  };
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="absolute"> {/*open={open}*/}
-          {/*<Toolbar
+        <AppBar position="absolute" open={open}>
+          <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
             }}
@@ -131,19 +127,13 @@ export default function Dashboard() {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={3} color="secondary">
+              <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            </Toolbar>
-           {/*<Header></Header>*/}
-           <Header></Header>
-           
+          </Toolbar>
         </AppBar>
-       <AppDrawer></AppDrawer>
-       
-       
-     {/*<Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
               display: 'flex',
@@ -157,13 +147,12 @@ export default function Dashboard() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav" >
+          <List component="nav">
             {mainListItems}
-            <Divider sx={{ my: 1}} />
+            <Divider sx={{ my: 1 }} />
             {secondaryListItems}
           </List>
-          </Drawer>*/}
-          
+        </Drawer>
         <Box
           component="main"
           sx={{
@@ -177,7 +166,7 @@ export default function Dashboard() {
           }}
         >
           <Toolbar />
-           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
               <Grid item xs={12} md={8} lg={9}>
@@ -189,10 +178,9 @@ export default function Dashboard() {
                     height: 240,
                   }}
                 >
-                <Chart />
+                  <Chart />
                 </Paper>
               </Grid>
-              
               {/* Recent Deposits */}
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
@@ -203,13 +191,13 @@ export default function Dashboard() {
                     height: 240,
                   }}
                 >
-               <Deposits />
+                  <Deposits />
                 </Paper>
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                <Orders />
+                  <Orders />
                 </Paper>
               </Grid>
             </Grid>
